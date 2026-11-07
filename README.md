@@ -389,63 +389,73 @@ npm test
 
 ## Screenshots
 
-Below are placeholders for the Postman test screenshots for submission:
+The following 15 Postman test execution screenshots demonstrate all required CRUD endpoints, query parameter handling, price range filtering, and negative validation scenarios.
 
 ### 1. Successful Cases
-- **Get All Books (`GET /books/`)**
-  ![Get All Books](screenshots/01_get_all_books.png)
 
-- **Search by Partial Title (`GET /books/?search_q=harry`)**
-  ![Search Title](screenshots/02_search_title.png)
+#### 01. Get All Books (`GET /books/`)
+- **Caption:** Retrieve all books from the SQLite database with default sorting and pagination (`200 OK`).
+![Get All Books](screenshots/01_get_all_books.png.png)
 
-- **Sort Ascending by Price (`GET /books/?order_by=price&order=ASC`)**
-  ![Sort Ascending](screenshots/03_sort_asc.png)
+#### 02. Search Books by Title (`GET /books/?search_q=harry`)
+- **Caption:** Filter books using partial title matching via SQL `LIKE` with parameterized wildcards (`200 OK`).
+![Search Books](screenshots/02_search_books.png.png)
 
-- **Sort Descending by Price (`GET /books/?order_by=price&order=DESC`)**
-  ![Sort Descending](screenshots/04_sort_desc.png)
+#### 03. Sort Ascending by Price (`GET /books/?order_by=price&order=ASC`)
+- **Caption:** Sort books in ascending order based on the `price` column (`200 OK`).
+![Sort Ascending by Price](screenshots/03_sort_ascending.png.png)
 
-- **Pagination (`GET /books/?limit=3&offset=3`)**
-  ![Pagination](screenshots/05_pagination.png)
+#### 04. Sort Descending by Price (`GET /books/?order_by=price&order=DESC`)
+- **Caption:** Sort books in descending order based on the `price` column (`200 OK`).
+![Sort Descending by Price](screenshots/04_sort_descending.png.png)
 
-- **Price Range Filter (`GET /books/?min_price=100&max_price=500`)**
-  ![Price Filter](screenshots/06_price_filter.png)
+#### 05. Pagination with Limit and Offset (`GET /books/?limit=3&offset=3`)
+- **Caption:** Paginate books using `limit` and `offset` parameters for seamless page navigation (`200 OK`).
+![Pagination with Limit and Offset](screenshots/05_pagination.png.png)
 
-- **Combined Query Parameters**
-  ![Combined Query](screenshots/07_combined_query.png)
+#### 06. Price Range Filter (`GET /books/?min_price=100&max_price=500`)
+- **Caption:** Filter books within a specified price range using SQL comparison conditions (`200 OK`).
+![Price Range Filter](screenshots/06_price_filter.png.png)
 
-- **Get Book by ID (`GET /books/1/`)**
-  ![Get Book By ID](screenshots/08_get_book_by_id.png)
+#### 07. Get Single Book by ID (`GET /books/1/`)
+- **Caption:** Retrieve details of a specific book by its primary key ID (`200 OK`).
+![Get Single Book by ID](screenshots/07_get_single_book.png.png)
 
-- **Create Book (`POST /books/`)**
-  ![Create Book](screenshots/09_post_create_book.png)
+#### 08. Add New Book (`POST /books/`)
+- **Caption:** Create a new book record with validated JSON payload (`201 Created`).
+![Add New Book](screenshots/08_add_book.png.png)
 
-- **Update Book (`PUT /books/1/`)**
-  ![Update Book](screenshots/10_put_update_book.png)
+#### 09. Update Book by ID (`PUT /books/1/`)
+- **Caption:** Update an existing book record in the database by its ID (`200 OK`).
+![Update Book by ID](screenshots/09_update_book.png.png)
 
-- **Delete Book (`DELETE /books/10/`)**
-  ![Delete Book](screenshots/11_delete_book.png)
+#### 10. Delete Book by ID (`DELETE /books/10/`)
+- **Caption:** Delete a book record from the database by its ID (`200 OK`).
+![Delete Book by ID](screenshots/10_delete_book.png.png)
+
+---
 
 ### 2. Failure Cases & Input Validation
-- **POST Missing Title (`400 Bad Request`)**
-  ![Missing Title](screenshots/12_post_missing_title.png)
 
-- **POST Missing Price (`400 Bad Request`)**
-  ![Missing Price](screenshots/13_post_missing_price.png)
+#### 11. Validation: Missing Title (`POST /books/`)
+- **Caption:** Reject book creation when the `title` field is omitted or empty (`400 Bad Request`).
+![Validation: Missing Title](screenshots/11_validation_missing_title.png.png)
 
-- **POST Non-Numeric Price (`400 Bad Request`)**
-  ![Non-Numeric Price](screenshots/14_post_non_numeric_price.png)
+#### 12. Validation: Missing Author (`POST /books/`)
+- **Caption:** Reject book creation when the `author` field is omitted or empty (`400 Bad Request`).
+![Validation: Missing Author](screenshots/12_validation_missing_author.png.png)
 
-- **GET Nonexistent Book (`404 Not Found`)**
-  ![GET Nonexistent Book](screenshots/15_get_nonexistent_book.png)
+#### 13. Validation: Missing Price (`POST /books/`)
+- **Caption:** Reject book creation when the `price` field is omitted (`400 Bad Request`).
+![Validation: Missing Price](screenshots/13_validation_missing_price.png.png)
 
-- **PUT Nonexistent Book (`404 Not Found`)**
-  ![PUT Nonexistent Book](screenshots/16_put_nonexistent_book.png)
+#### 14. Validation: Invalid / Non-Numeric Price (`POST /books/`)
+- **Caption:** Reject book creation when `price` is non-numeric or negative (`400 Bad Request`).
+![Validation: Invalid Price](screenshots/14_validation_invalid_price.png.png)
 
-- **DELETE Nonexistent Book (`404 Not Found`)**
-  ![DELETE Nonexistent Book](screenshots/17_delete_nonexistent_book.png)
-
-- **Invalid Query Parameters (`400 Bad Request`)**
-  ![Invalid Query Parameters](screenshots/18_invalid_query_params.png)
+#### 15. Book Not Found (`GET /books/99999/`)
+- **Caption:** Return not found error when requesting an ID that does not exist in the database (`404 Not Found`).
+![Book Not Found](screenshots/15_book_not_found.png.png)
 
 ---
 
