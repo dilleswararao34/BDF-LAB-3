@@ -12,8 +12,9 @@
 
 ## Submission & Deployment Links
 - **GitHub Repository:** [https://github.com/dilleswararao34/BDF-LAB-3](https://github.com/dilleswararao34/BDF-LAB-3)
-- **Live Deployment URL (Render):** `https://bdf-lab-3.onrender.com` *(Pending Render deployment)*
-- **Live API Endpoint:** `https://bdf-lab-3.onrender.com/books/` *(Pending Render deployment)*
+- **Live Deployment URL (Render):** [https://bdf-lab-3-gzkh.onrender.com](https://bdf-lab-3-gzkh.onrender.com)
+- **Live API Endpoint:** [https://bdf-lab-3-gzkh.onrender.com/books/](https://bdf-lab-3-gzkh.onrender.com/books/)
+- **Live Health Check:** [https://bdf-lab-3-gzkh.onrender.com/](https://bdf-lab-3-gzkh.onrender.com/)
 
 ---
 
