@@ -56,30 +56,28 @@ BDF-LAB-3/
 ├── index.js
 ├── initDb.js
 ├── package.json
+├── package-lock.json
 ├── README.md
 ├── testEndpoints.js
 ├── postman/
 │   └── BDF_LAB_3.postman_collection.json
 └── screenshots/
     ├── README.md
-    ├── 01_get_all_books.png
-    ├── 02_search_title.png
-    ├── 03_sort_asc.png
-    ├── 04_sort_desc.png
-    ├── 05_pagination.png
-    ├── 06_price_filter.png
-    ├── 07_combined_query.png
-    ├── 08_get_book_by_id.png
-    ├── 09_post_create_book.png
-    ├── 10_put_update_book.png
-    ├── 11_delete_book.png
-    ├── 12_post_missing_title.png
-    ├── 13_post_missing_price.png
-    ├── 14_post_non_numeric_price.png
-    ├── 15_get_nonexistent_book.png
-    ├── 16_put_nonexistent_book.png
-    ├── 17_delete_nonexistent_book.png
-    └── 18_invalid_query_params.png
+    ├── 01_get_all_books.png.png
+    ├── 02_search_books.png.png
+    ├── 03_sort_ascending.png.png
+    ├── 04_sort_descending.png.png
+    ├── 05_pagination.png.png
+    ├── 06_price_filter.png.png
+    ├── 07_get_single_book.png.png
+    ├── 08_add_book.png.png
+    ├── 09_update_book.png.png
+    ├── 10_delete_book.png.png
+    ├── 11_validation_missing_title.png.png
+    ├── 12_validation_missing_author.png.png
+    ├── 13_validation_missing_price.png.png
+    ├── 14_validation_invalid_price.png.png
+    └── 15_book_not_found.png.png
 ```
 
 ---
